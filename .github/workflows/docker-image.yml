@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+    - name: Get Tag
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
     
     - uses: actions/checkout@v4
     - name: Ejecucion Pruebas SAST
@@ -27,5 +31,5 @@ jobs:
     - name: Docker build image
       uses: docker/build-push-action@v2
       with:       
-       tags: "devops_ws_:$(date +%s)"
+       tags: devops_ws_:${{ steps.date.outputs.date }}
        file: .
