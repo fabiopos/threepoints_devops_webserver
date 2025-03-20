@@ -1,0 +1,25 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - uses: actions/checkout@v4
+    - name: Ejecucion Pruebas SAST
+      run: echo "Ejecucion de Pruebas SAST"
+      
+    - name: Crear archivo de credenciales
+      run: echo 'Creando archivo...'
+      
+    - name: Build Docker image
+      run: docker build -t devops_ws . --tag devops_ws_:$(date +%s)
