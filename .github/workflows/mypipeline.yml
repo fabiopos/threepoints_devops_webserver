@@ -15,7 +15,15 @@ jobs:
         run: echo "Ejecucion de Pruebas SAST"
 
       - name: Crear archivo de credenciales
-        run: echo 'Creando archivo...'
+        env:
+          AWS_HOST: ${{ secrets.username }}
+          AWS_PORT: ${{ secrets.password }}
+        run: |
+          touch credentials.ini
+          echo [credentials] >> credentials.ini
+          echo username="$username" >> credentials.ini
+          echo password="$password" >> credentials.ini
+          
 
   build:
     runs-on: ubuntu-latest
