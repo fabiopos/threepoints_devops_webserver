@@ -22,4 +22,4 @@ jobs:
       run: echo 'Creando archivo...'
       
     - name: Build Docker image
-      run: docker build . --tag devops_ws_:$(date +%s)
+      run: docker build . --name devops_ws_:$(date +%s)
