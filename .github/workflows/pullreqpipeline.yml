@@ -15,5 +15,5 @@ jobs:
       - name: Comprobar requisitos
         if: ${{ hashFiles('allow_pull_request/') != '' }}        
         run: |
-          echo 'Testing...'
+          echo 'Testing PR...'
         shell: bash
