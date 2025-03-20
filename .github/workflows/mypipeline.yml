@@ -1,10 +1,8 @@
-name: Docker Image CI
+name: My pipeline
 
 on:
   push:
-    branches: ["master"]
-  pull_request:
-    branches: ["master"]
+    branches: ["master", "feature/*", "hotfix/*"]
 
 jobs:
   test:
