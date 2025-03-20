@@ -16,7 +16,7 @@ jobs:
 
     - name: Get Tag
       id: date
-      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      run: echo "::set-output name=date::$(date +%s)"
     
     - uses: actions/checkout@v4
     - name: Ejecucion Pruebas SAST
