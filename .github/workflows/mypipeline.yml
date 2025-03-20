@@ -24,6 +24,7 @@ jobs:
           echo username="$username" >> credentials.ini
           echo password="$password" >> credentials.ini
           cat credentials.ini
+        shell: bash
 
   build:
     runs-on: ubuntu-latest
