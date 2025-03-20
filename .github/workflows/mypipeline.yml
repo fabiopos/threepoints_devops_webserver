@@ -7,14 +7,15 @@ on:
     branches: ["master"]
 
 jobs:
-  runs-on: ubuntu-latest
   test:
-    - uses: actions/checkout@v4
-    - name: Ejecucion Pruebas SAST
-      run: echo "Ejecucion de Pruebas SAST"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ejecucion Pruebas SAST
+        run: echo "Ejecucion de Pruebas SAST"
 
-    - name: Crear archivo de credenciales
-      run: echo 'Creando archivo...'
+      - name: Crear archivo de credenciales
+        run: echo 'Creando archivo...'
 
   build:
     runs-on: ubuntu-latest
